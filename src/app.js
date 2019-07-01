@@ -4,6 +4,7 @@ const hbs=require('hbs')
 const geocode=require('../utils/geocode')
 const forecast=require('../utils/forecast')
 const app=express()
+const port=process.env.PORT || 3000
 app.use(express.static(path.join(__dirname,'../public')))
 // app.get('',(req,res)=>{
 //     res.send('Hello express')
@@ -77,6 +78,6 @@ app.get('*',(req,res)=>{
         errormsg:'So you got dump'
     })
 })
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('Server is up')
 })
